@@ -1,0 +1,12 @@
+cmake_minimum_required (VERSION 2.8)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules")
+enable_language(Pascal)
+project (G4FGQ Pascal)
+
+add_executable(coax_vlf coax_vlf.pas)
+add_executable(grndwav3 grndwav3.pas)
+add_executable(line_zin line_zin.pas)
+add_executable(padmatch padmatch.pas)
+add_executable(propgate propgate.pas)
+add_executable(tophat2 tophat2.pas)
+add_executable(tranco_1 tranco_1.pas)
