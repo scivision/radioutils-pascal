@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/scivision/radioutils-pascal.svg?branch=master
+    :target: https://travis-ci.org/scivision/radioutils-pascal
+
 ===============================
 Pascal radio utilities by G4FGQ
 ===============================
