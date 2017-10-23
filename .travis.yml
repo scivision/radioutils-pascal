@@ -1,5 +1,6 @@
 # a simple Travis-CI Free Pascal example
 language: generic
+fast_finish: true
 
 sudo: true
 dist: trusty
