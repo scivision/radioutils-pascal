@@ -11,6 +11,15 @@ Also of interest may be `Pascal Intermodulation calculator <https://github.com/s
 
 `CMake4Pascal <https://github.com/daar/CMake4Pascal>`_ is credited for the ``cmake_modules/`` and getting CMake to work with Pascal.
 
+
+Prereq
+======
+
+* Linux: ``apt install fp-compiler``
+* Mac: ``brew install fpc``
+* `Windows <https://www.freepascal.org/download.var>`_
+
+
 Build
 =====
 ::
@@ -19,4 +28,7 @@ Build
     cmake ..
     make
 
+Test::
+    
+   make test
 

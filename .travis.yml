@@ -3,15 +3,11 @@ language: generic
 fast_finish: true
 
 sudo: true
-dist: trusty
-group: edge
+group: travis_latest
 
 os:
   - linux
   - osx
-
-notifications:
-  email: false
 
 git:
   depth: 3
@@ -25,5 +21,11 @@ before_install:
         sudo apt install fp-compiler;
       fi
 
-script: fpc padmatch.pas
+install:
+  - cd bin
+  - cmake ..
+  - make
+  
+script:
+  - make test
 
