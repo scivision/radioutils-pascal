@@ -1,6 +1,5 @@
 # a simple Travis-CI Free Pascal example
 language: generic
-fast_finish: true
 
 sudo: true
 group: travis_latest
@@ -11,6 +10,7 @@ os:
 
 git:
   depth: 3
+  quiet: true
 
 
 before_install:
@@ -24,8 +24,8 @@ before_install:
 install:
   - cd bin
   - cmake ..
-  - make
+  - cmake --build .
   
 script:
-  - make test
+  - ctest -V
 
