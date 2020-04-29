@@ -1,31 +1,30 @@
 # a simple Travis-CI Free Pascal example
-language: generic
-
-sudo: true
+language: python
 group: travis_latest
 
 os:
   - linux
-  - osx
+#  - osx  # works, just saving CI resources
 
 git:
-  depth: 3
+  depth: 25
   quiet: true
 
 
 before_install:
-    - if [[ $TRAVIS_OS_NAME == osx ]]; then
-        brew update > /dev/null;
-        brew install fpc > /dev/null;
-      else
-        sudo apt -q install fp-compiler;
-      fi
+- if [[ $TRAVIS_OS_NAME == osx ]]; then
+    brew install fpc > /dev/null;
+  else
+    sudo apt -yq update;
+    sudo apt -yq install fp-compiler;
+    pip install cmake;
+  fi
+
 
 install:
-  - cd bin
-  - cmake ..
-  - cmake --build .
-  
-script:
-  - ctest -V
+- cmake -B build
+- cmake --build build
 
+script:
+- cd build
+- ctest -V
